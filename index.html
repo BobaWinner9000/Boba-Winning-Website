@@ -16,9 +16,6 @@
         <p style="text-indent: 20px; width: 500px; margin: 0 auto; text-align: center;">
         This website is the winner of the boba contest from 2025, which stood out as a "work of art" among the other contestants. But not only was this website award with the best website of the year, Milliken has also decided to honor this by recognizing and revisiting this masterpiece for every year to come. 😘😘😘
         </p>
-        <audio controls loop autoplay hidden muted>
-            <source src="mylittlepony.mp3">
-        </audio>
     </body>
     <script>
         let counter = 0
@@ -36,6 +33,9 @@
         }
         function clicked(img) {
             fartNoise()
+            if (counter == 0) {
+                new Audio("mylittlepony.mp3").play()
+            }
             document.querySelector("audio").muted = false;
             counter++;
             document.getElementById("count").textContent = counter;
