@@ -34,9 +34,10 @@
         function clicked(img) {
             fartNoise()
             if (counter == 0) {
-                new Audio("mylittlepony.mp3").play()
+                const bgm = new Audio("mylittlepony.mp3").play()
+                bgm.loop = true;
+                bgm.play();
             }
-            document.querySelector("audio").muted = false;
             counter++;
             document.getElementById("count").textContent = counter;
             img.style.transform = "scale(1.4)";
