@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css"/>
+    <br></br>
+    <head>
+        <h1>Boba Clicker</h1>
+        <p>Click on the boba and keep clicking!!</p>
+    </head>
+    <body>
+        <img id="boba" src="https://cdn.pixabay.com/animation/2023/03/19/15/38/15-38-15-130_512.gif" 
+        onclick="clicked(this)";></img>
+        <h2><span id="count" style="display:inline-block; transition:transform 0.2s;">
+        </span></h2>
+        <div style="margin-bottom: 100px;"></div>
+        <h2>About this Page</h2>
+        <p style="text-indent: 20px; width: 500px; margin: 0 auto; text-align: center;">
+        This website is the winner of the boba contest from 2025, which stood out as a "work of art" among the other contestants. But not only was this website award with the best website of the year, Milliken has also decided to honor this by recognizing and revisiting this masterpiece for every year to come. 😘😘😘
+        </p>
+    </body>
+    <audio controls autoplay loop hidden>
+        <source src="My Little Pony - Friendship is Magic Theme Song! - My Little Pony - Official Channel.mp3" type="audio/mpeg">
+  
+    </audio>
+    <script>
+        let counter = 0
+        let rotation = 0
+        let wiggleDirection = 1
+        let messages = ["gimme boba 🧋","GIMME BOBA NOW 😡","IK WHERE YOU LIVE!! 🤬","FINAL WARNING!! ⚠️","I'M SERIOUS LAST WARNING!! 🔫","YOU LEFT ME NO CHOICE!! 💣","YOU HURT MY FEELINGS I'M LEAVING YOU NO MORE MESSAGES AHHH!! 🤧🤧"]
+        setInterval(() => wiggleBoba(5), 70);
+        document.getElementById("count").textContent = counter;
+        function wiggleBoba(intensity){
+            rotation += wiggleDirection*intensity
+            document.getElementById("boba").style.transform = `rotate(${rotation}deg)`;
+            if (rotation > 10 || rotation < -10) {
+                wiggleDirection *= -1
+            }
+        }
+        function clicked(img) {
+            fartNoise()
+            counter++;
+            document.getElementById("count").textContent = counter;
+            img.style.transform = "scale(1.4)";
+            setTimeout(() => {
+                img.style.transform = "scale(1)";
+            }, 50);
+            document.getElementById("count").style.transform = "scale(2)";
+            setTimeout(() => {
+            document.getElementById("count").style.transform = "scale(1)";
+            }, 100);
+            if (counter%10==0 && counter/10 < messages.length){
+                alert(messages[counter/10 - 1])   
+            }
+        function fartNoise(){
+            new Audio("fart-91011.mp3").play()
+        }
+            
+            
+        }
+    </script>
+
+</html>
