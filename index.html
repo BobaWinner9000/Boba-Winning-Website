@@ -24,7 +24,6 @@
         let messages = ["gimme boba 🧋","GIMME BOBA NOW 😡","IK WHERE YOU LIVE!! 🤬","FINAL WARNING!! ⚠️","I'M SERIOUS LAST WARNING!! 🔫","YOU LEFT ME NO CHOICE!! 💣","YOU HURT MY FEELINGS I'M LEAVING YOU NO MORE MESSAGES AHHH!! 🤧🤧"]
         setInterval(() => wiggleBoba(5), 70);
         document.getElementById("count").textContent = counter;
-        const bgm = new Audio("mylittlepony.mp3").play()
         function wiggleBoba(intensity){
             rotation += wiggleDirection*intensity
             document.getElementById("boba").style.transform = `rotate(${rotation}deg)`;
@@ -35,6 +34,7 @@
         function clicked(img) {
             fartNoise()
             if (counter == 0) {
+                const bgm = new Audio("mylittlepony.mp3").play()
                 bgm.loop = true;
                 bgm.play();
             }
